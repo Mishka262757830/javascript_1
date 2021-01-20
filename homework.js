@@ -1,27 +1,72 @@
-"use strict"
+"use strict";
 //First task
-let Tc = Number(prompt("Enter temperature in Tc:"));
-let Tf = (9 / 5) * Tc + 32;
-alert("Temperature in Tf is: " + Tf + ".");
+let a = 1, b = 1, c, d;
+c = ++a;
+alert(c); // ответ: 2
 
+d = b++;
+alert(d); //ответ: 1
+
+c = 2 + ++a;
+alert(c); //ответ: 5
+
+d = 2 + b++;
+alert(d); //ответ: 4
+alert(a); //3
+alert(b); //3
 //Second task
-let name = "Василий";
-let admin = name;
-console.log(admin);
-
+//Ответ 5. Так как сначала выполняется действие в скобках. Если бы не было задано значение переменной a, то она бы приняла значение 2 (*= умножение и присваивание)
+let a = 2;
+let x = 1 + (a *= 2);
 //Third task
-//первый два числа складываются,третье это строка. В итоге получается строка "2010"
-let result = 10 + 10 + "10";
-console.log(result);
-//принцип тот же,что и в первом пункте. Числа становятся строкой "101010"
-result = 10 + "10" + 10;
-console.log(result);
-//строка преобразуется в число
-result = 10 + 10 + +"10";
-console.log(result);
-//строка преобразуется в число.  Так как строка пуста и имеет отрицательное значение,то получается минус бесконечность
-result = 10 / -"";
-console.log(result);
-//NaN получается из-за того,что не правильно указано дробное число (наверное)
-result = 10 / +"2,5";
-console.log(result);
+let a = Number(prompt('Enter first number:'));
+let b = Number(prompt('Enter second number:'));
+if (a >= 0 && b >= 0) {
+    alert(a - b);
+} else if (a < 0 && b < 0) {
+    alert(a * b);
+} else if (a > 0 && b < 0 || a < 0 && b > 0) {
+    alert(a + b);
+} else {
+    alert('Error!');
+}
+//Fourth task
+let m = Number(prompt('Enter first number:'));
+let n = Number(prompt('Enter second number:'));
+function summ (m, n) {
+    return m + n;
+}
+let res = summ(m, n);
+alert(res);
+
+function dif(m, n) {
+    return m - n;
+}
+res = dif(m, n);
+alert(res);
+
+function multi(m, n) {
+    return m * n;
+}
+res = multi(m, n);
+alert(res);
+
+function div(m, n) {
+    return m / n;
+}
+res = div(m, n);
+alert(res);
+//Fifth task
+//Не до конца понял,что сделал
+function mathOperation(m, n, operation) {
+    switch (operation) {
+        case "+":
+            return summ(m, n);
+        case  "-":
+            return dif(m, n);
+        case "*":
+            return multi(m, n);
+        case "/":
+            return div(m, n);
+    }
+}
