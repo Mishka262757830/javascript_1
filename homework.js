@@ -70,3 +70,4 @@ function mathOperation(m, n, operation) {
             return div(m, n);
     }
 }
+//Sixth task
